@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'Archipel des Langues | The Archipelago of Languages | أرخبيل اللغات</title>
+  <meta name="description" content="L'Archipel des Langues - École moderne de langues à Nouadhibou, Mauritanie. Cours de Français, Anglais et Arabe (niveaux A1-C2) avec outils pédagogiques interactifs." />
+  <meta property="og:title" content="L'Archipel des Langues — Nouadhibou, Mauritanie" />
+  <meta property="og:description" content="Apprenez le Français, l'Anglais et l'Arabe avec des outils interactifs modernes. Test de niveau gratuit." />
+  <meta property="og:url" content="https://www.archipeldeslangues.mr" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --navy: #0f2942;
+      --navy-dark: #091a2b;
+      --emerald: #108a62;
+      --emerald-light: #e6f5f0;
+      --gold: #d99b26;
+      --gold-light: #fdf6e7;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 14px;
+      --shadow: 0 10px 25px -5px rgba(15, 41, 66, 0.08), 0 8px 10px -6px rgba(15, 41, 66, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Arabic", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Top Color Bar */
+    .top-bar {
+      height: 6px;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 45%, var(--emerald) 45%, var(--emerald) 80%, var(--gold) 80%, var(--gold) 100%);
+    }
+
+    /* Header / Navbar */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(15, 41, 66, 0.04);
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--navy);
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(15, 41, 66, 0.18);
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    .brand-text span {
+      font-size: 0.78rem;
+      color: var(--emerald);
+      font-weight: 600;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--emerald);
+    }
+
+    .lang-switcher {
+      display: flex;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 10px;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      border-radius: 7px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--navy);
+      color: #ffffff;
+      box-shadow: 0 2px 5px rgba(15, 41, 66, 0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #163d61 65%, #115e59 100%);
+      color: #ffffff;
+      padding: 64px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge-open {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(217, 155, 38, 0.2);
+      border: 1px solid rgba(217, 155, 38, 0.55);
+      color: #fcd34d;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-size: 2.35rem;
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: #e2e8f0;
+      margin-bottom: 28px;
+      max-width: 600px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--emerald);
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(16, 138, 98, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #0d7351;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #0f2942;
+      box-shadow: 0 6px 16px rgba(217, 155, 38, 0.3);
+    }
+
+    .btn-gold:hover {
+      background: #c58a1c;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .hero-card h3 {
+      font-size: 1.2rem;
+      margin: 14px 0 6px;
+      color: #ffffff;
+    }
+
+    .hero-card .domain-tag {
+      display: inline-block;
+      background: rgba(16, 138, 98, 0.35);
+      color: #6ee7b7;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .stat-item strong {
+      display: block;
+      font-size: 1.25rem;
+      color: #fcd34d;
+    }
+
+    .stat-item span {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 44px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--emerald-light);
+      color: var(--emerald);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .section-header h2 {
+      font-size: 1.9rem;
+      color: var(--navy);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* 3 Languages Cards */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .lang-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .lang-card.en {
+      border-top-color: var(--emerald);
+    }
+
+    .lang-card.ar {
+      border-top-color: var(--gold);
+    }
+
+    .lang-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .lang-pill {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #e2e8f0;
+      color: var(--navy);
+    }
+
+    .lang-card.en .lang-pill {
+      background: var(--emerald-light);
+      color: var(--emerald);
+    }
+
+    .lang-card.ar .lang-pill {
+      background: var(--gold-light);
+      color: #b45309;
+    }
+
+    .lang-card h3 {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .lang-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .feature-list {
+      list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .feature-list li {
+      font-size: 0.88rem;
+      color: var(--text);
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .check {
+      color: var(--emerald);
+      font-weight: 900;
+    }
+
+    /* Tools Grid */
+    .tools-section {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tool-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .tool-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--navy);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tool-box h4 {
+      font-size: 1.02rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .tool-box p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* Schedule & Registration */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .info-panel {
+      background: var(--navy);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-panel h3 {
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+      color: #fcd34d;
+    }
+
+    .director-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 4px solid var(--gold);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 18px 0 22px;
+    }
+
+    [dir="rtl"] .director-box {
+      border-left: none;
+      border-right: 4px solid var(--gold);
+    }
+
+    .director-box strong {
+      display: block;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+    }
+
+    .director-box span {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    .info-item {
+      margin-bottom: 18px;
+    }
+
+    .info-item label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6ee7b7;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .info-item p, .info-item a {
+      color: #ffffff;
+      font-size: 0.98rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .info-item a:hover {
+      text-decoration: underline;
+    }
+
+    .form-panel {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .form-panel h3 {
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-panel p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 9px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #f8fafc;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--emerald);
+      background: #ffffff;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-dark);
+      color: #94a3b8;
+      padding: 36px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    .footer-domain {
+      color: #6ee7b7;
+      font-weight: 700;
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: #25d366;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 200;
+      transition: transform 0.2s;
+    }
+
+    [dir="rtl"] .whatsapp-float {
+      right: auto;
+      left: 22px;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.04);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .cards-3, .tools-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h2 {
+        font-size: 1.85rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar"></div>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <div class="brand-logo" aria-hidden="true">
+          <!-- Custom Book + Laptop + Archipelago SVG Logo -->
+          <svg width="38" height="38" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Open Book -->
+            <path d="M14 26C19 23 26 24 32 28C38 24 45 23 50 26V40C45 37 38 38 32 42C26 38 19 37 14 40V26Z" fill="#ffffff" stroke="#d99b26" stroke-width="2.5" stroke-linejoin="round"/>
+            <line x1="32" y1="28" x2="32" y2="42" stroke="#d99b26" stroke-width="2"/>
+            <!-- Laptop Base -->
+            <rect x="11" y="42" width="42" height="4" rx="2" fill="#108a62"/>
+            <path d="M7 46H57L54 50H10L7 46Z" fill="#d99b26"/>
+            <!-- Three Archipelago Islands/Dots -->
+            <circle cx="22" cy="16" r="3" fill="#108a62"/>
+            <circle cx="32" cy="12" r="3.5" fill="#d99b26"/>
+            <circle cx="42" cy="16" r="3" fill="#ffffff"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1 data-i18n="schoolName">L'Archipel des Langues</h1>
+          <span data-i18n="schoolSub">Nouadhibou · Mauritanie</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#formations" data-i18n="navCourses">Formations</a>
+        <a href="#methode" data-i18n="navMethod">Outils Interactifs</a>
+        <a href="#inscription" data-i18n="navContact">Inscription & Contact</a>
+      </nav>
+
+      <div class="lang-switcher" role="group" aria-label="Choix de la langue">
+        <button class="lang-btn active" onclick="setLanguage('fr')" id="btn-fr">FR</button>
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+        <button class="lang-btn" onclick="setLanguage('ar')" id="btn-ar">العربية</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge-open" data-i18n="heroBadge">✨ Inscriptions ouvertes · Test de niveau gratuit</div>
+          <h2 data-i18n="heroTitle">Maîtrisez le Français, l'Anglais et l'Arabe avec une méthode moderne</h2>
+          <p data-i18n="heroDesc">
+            Bienvenue à L'Archipel des Langues à Nouadhibou. Des outils pédagogiques dynamiques et interactifs pour enfants, étudiants et professionnels, en présentiel et en ligne.
+          </p>
+          <div class="hero-actions">
+            <a href="#inscription" class="btn btn-primary" data-i18n="heroCta1">S'inscrire maintenant</a>
+            <a href="https://wa.me/22247672797?text=Bonjour%20L'Archipel%20des%20Langues%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20les%20cours." target="_blank" rel="noopener" class="btn btn-gold" data-i18n="heroCta2">WhatsApp Direct</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <svg width="72" height="72" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="16" fill="#091a2b"/>
+            <path d="M14 26C19 23 26 24 32 28C38 24 45 23 50 26V40C45 37 38 38 32 42C26 38 19 37 14 40V26Z" fill="#ffffff" stroke="#d99b26" stroke-width="2.5" stroke-linejoin="round"/>
+            <line x1="32" y1="28" x2="32" y2="42" stroke="#d99b26" stroke-width="2"/>
+            <rect x="11" y="42" width="42" height="4" rx="2" fill="#108a62"/>
+            <path d="M7 46H57L54 50H10L7 46Z" fill="#d99b26"/>
+            <circle cx="22" cy="16" r="3" fill="#108a62"/>
+            <circle cx="32" cy="12" r="3.5" fill="#d99b26"/>
+            <circle cx="42" cy="16" r="3" fill="#ffffff"/>
+          </svg>
+          <h3>L'Archipel des Langues</h3>
+          <div class="domain-tag">www.archipeldeslangues.mr</div>
+          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0;" data-i18n="cardSub">
+            Direction : AHMED TALEB ZEIN
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>3</strong>
+              <span data-i18n="stat1">Langues</span>
+            </div>
+            <div class="stat-item">
+              <strong>A1–C2</strong>
+              <span data-i18n="stat2">Tous niveaux</span>
+            </div>
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span data-i18n="stat3">Interactif</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Languages Section -->
+    <section id="formations">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="sec1Tag">Nos Programmes Trilingues</span>
+          <h2 data-i18n="sec1Title">Trois langues pour ouvrir toutes les portes</h2>
+          <p data-i18n="sec1Desc">Des parcours adaptés à chaque âge et chaque objectif : scolaire, universitaire ou professionnel.</p>
+        </div>
+
+        <div class="cards-3">
+          <!-- Français -->
+          <article class="lang-card">
+            <div>
+              <div class="lang-card-header">
+                <span class="lang-pill">FRANÇAIS</span>
+                <span>🇫🇷</span>
+              </div>
+              <h3 data-i18n="frTitle">Cours de Français</h3>
+              <p data-i18n="frDesc">
+                Outils pédagogiques dynamiques et interactifs : dialogues structurés, vocabulaire thématique, grammaire claire et prononciation.
+              </p>
+            </div>
+            <ul class="feature-list">
+              <li><span class="check">✓</span> <span data-i18n="frF1">Communication orale & aisance</span></li>
+              <li><span class="check">✓</span> <span data-i18n="frF2">Soutien scolaire & préparation examens</span></li>
+              <li><span class="check">✓</span> <span data-i18n="frF3">Français professionnel & rédaction</span></li>
+            </ul>
+          </article>
+
+          <!-- English -->
+          <article class="lang-card en">
+            <div>
+              <div class="lang-card-header">
+                <span class="lang-pill">ENGLISH</span>
+                <span>🇬🇧</span>
+              </div>
+              <h3 data-i18n="enTitle">Cours d'Anglais</h3>
+              <p data-i18n="enDesc">
+                Dynamic and interactive learning tools: structured dialogues, thematic vocabulary, clear grammar, and listening comprehension.
+              </p>
+            </div>
+            <ul class="feature-list">
+              <li><span class="check">✓</span> <span data-i18n="enF1">Speaking & listening practice</span></li>
+              <li><span class="check">✓</span> <span data-i18n="enF2">General & Business English</span></li>
+              <li><span class="check">✓</span> <span data-i18n="enF3">Interactive quizzes & pronunciation</span></li>
+            </ul>
+          </article>
+
+          <!-- Arabe -->
+          <article class="lang-card ar">
+            <div>
+              <div class="lang-card-header">
+                <span class="lang-pill">العربية</span>
+                <span>🇲🇷</span>
+              </div>
+              <h3 data-i18n="arTitle">Cours d'Arabe</h3>
+              <p data-i18n="arDesc">
+                أدوات تعليمية تفاعلية ومبتكرة: حوارات واضحة، مفردات موضوعية، قواعد مبسطة، وتطوير الفهم الشفهي والنطق السليم.
+              </p>
+            </div>
+            <ul class="feature-list">
+              <li><span class="check">✓</span> <span data-i18n="arF1">Lecture, écriture et grammaire claire</span></li>
+              <li><span class="check">✓</span> <span data-i18n="arF2">Expression orale et compréhension</span></li>
+              <li><span class="check">✓</span> <span data-i18n="arF3">Cours pour débutants et perfectionnement</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Tools Section -->
+    <section id="methode" class="tools-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="sec2Tag">Pédagogie Numérique</span>
+          <h2 data-i18n="sec2Title">Nos outils pédagogiques interactifs</h2>
+          <p data-i18n="sec2Desc">Une approche moderne alliant supports numériques sur ordinateur et pratique orale en petits groupes.</p>
+        </div>
+
+        <div class="tools-grid">
+          <div class="tool-box">
+            <div class="tool-icon">💬</div>
+            <div>
+              <h4 data-i18n="t1Title">Dialogues structurés</h4>
+              <p data-i18n="t1Desc">Mises en situation réelles pour parler avec confiance dès les premières séances.</p>
+            </div>
+          </div>
+          <div class="tool-box">
+            <div class="tool-icon">📚</div>
+            <div>
+              <h4 data-i18n="t2Title">Vocabulaire thématique</h4>
+              <p data-i18n="t2Desc">Fiches visuelles et mémorisation active adaptée à la vie quotidienne et au travail.</p>
+            </div>
+          </div>
+          <div class="tool-box">
+            <div class="tool-icon">🧩</div>
+            <div>
+              <h4 data-i18n="t3Title">Grammaire claire</h4>
+              <p data-i18n="t3Desc">Explications simples, progressives et sans jargon complexe.</p>
+            </div>
+          </div>
+          <div class="tool-box">
+            <div class="tool-icon">💻</div>
+            <div>
+              <h4 data-i18n="t4Title">Quiz interactifs</h4>
+              <p data-i18n="t4Desc">Exercices numériques ludiques pour évaluer vos progrès en temps réel.</p>
+            </div>
+          </div>
+          <div class="tool-box">
+            <div class="tool-icon">🎧</div>
+            <div>
+              <h4 data-i18n="t5Title">Compréhension orale</h4>
+              <p data-i18n="t5Desc">Supports audio authentiques pour habituer l'oreille aux accents naturels.</p>
+            </div>
+          </div>
+          <div class="tool-box">
+            <div class="tool-icon">🗣️</div>
+            <div>
+              <h4 data-i18n="t6Title">Prononciation</h4>
+              <p data-i18n="t6Desc">Ateliers phonétiques ciblés pour une expression fluide et naturelle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Pre-registration -->
+    <section id="inscription">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="sec3Tag">Rejoignez-nous</span>
+          <h2 data-i18n="sec3Title">Inscription & Coordonnées</h2>
+          <p data-i18n="sec3Desc">Réservez votre test de niveau gratuit ou contactez-nous directement sur WhatsApp.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- School Info -->
+          <div class="info-panel">
+            <h3 data-i18n="infoHeading">L'Archipel des Langues</h3>
+            <p style="color: #cbd5e1; font-size: 0.92rem;" data-i18n="infoSub">
+              Centre de formation linguistique · Présentiel & En ligne
+            </p>
+
+            <div class="director-box">
+              <strong>AHMED TALEB ZEIN · أحمد طالب الزين</strong>
+              <span data-i18n="directorRole">Fondateur & Directeur · Founder & Director</span>
+            </div>
+
+            <div class="info-item">
+              <label data-i18n="lblPhone">Téléphone & WhatsApp</label>
+              <p>
+                <a href="https://wa.me/22247672797" target="_blank" rel="noopener">(+222) 47 67 27 97</a><br />
+                <a href="https://wa.me/22236373877" target="_blank" rel="noopener">(+222) 36 37 38 77</a>
+              </p>
+            </div>
+
+            <div class="info-item">
+              <label data-i18n="lblEmail">E-mail</label>
+              <p><a href="mailto:saleckahmedtaleb@gmail.com">saleckahmedtaleb@gmail.com</a></p>
+            </div>
+
+            <div class="info-item">
+              <label data-i18n="lblAddress">Adresse</label>
+              <p data-i18n="valAddress">Nouadhibou, Mauritanie · نواذيبو، موريتانيا</p>
+            </div>
+
+            <div class="info-item" style="margin-bottom: 0;">
+              <label data-i18n="lblHours">Horaires des cours</label>
+              <p data-i18n="valHours">Lun – Ven : 08h30 – 13h00 & 16h00 – 21h00<br />Samedi : 09h00 – 14h00</p>
+            </div>
+          </div>
+
+          <!-- WhatsApp Pre-Registration Form -->
+          <div class="form-panel">
+            <h3 data-i18n="formTitle">Demande d'inscription / Test gratuit</h3>
+            <p data-i18n="formDesc">Remplissez ce formulaire rapide : votre demande sera envoyée directement sur notre WhatsApp.</p>
+
+            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+              <div class="form-group">
+                <label for="fullName" data-i18n="fName">Nom complet</label>
+                <input type="text" id="fullName" class="form-control" required placeholder="Ex: Mohamed Salem" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone" data-i18n="fPhone">Votre numéro WhatsApp</label>
+                  <input type="tel" id="phone" class="form-control" required placeholder="Ex: +222 47 XX XX XX" />
+                </div>
+                <div class="form-group">
+                  <label for="languageChoice" data-i18n="fLang">Langue souhaitée</label>
+                  <select id="languageChoice" class="form-control">
+                    <option value="Français">Français</option>
+                    <option value="Anglais / English">Anglais / English</option>
+                    <option value="Arabe / العربية">Arabe / العربية</option>
+                    <option value="Pack Trilingue (FR + EN + AR)">Pack Trilingue (FR + EN + AR)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="level" data-i18n="fLevel">Niveau estimé</label>
+                  <select id="level" class="form-control">
+                    <option value="Débutant (A1-A2)">Débutant (A1–A2)</option>
+                    <option value="Intermédiaire (B1-B2)">Intermédiaire (B1–B2)</option>
+                    <option value="Avancé (C1-C2)">Avancé (C1–C2)</option>
+                    <option value="Test de niveau gratuit">Test de niveau gratuit</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="mode" data-i18n="fMode">Format de cours</label>
+                  <select id="mode" class="form-control">
+                    <option value="Présentiel (Nouadhibou)">Présentiel (Nouadhibou)</option>
+                    <option value="En ligne">En ligne</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 6px;" data-i18n="fSubmit">
+                Envoyer via WhatsApp (+222 47 67 27 97)
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>L'Archipel des Langues</strong> · The Archipelago of Languages · أرخبيل اللغات</p>
+      <p>AHMED TALEB ZEIN — Nouadhibou, Mauritanie</p>
+      <span class="footer-domain">www.archipeldeslangues.mr</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/22247672797" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contacter sur WhatsApp">
+    <span>💬 WhatsApp</span>
+  </a>
+
+  <script>
+    const translations = {
+      fr: {
+        dir: "ltr",
+        schoolName: "L'Archipel des Langues",
+        schoolSub: "Nouadhibou · Mauritanie",
+        navCourses: "Formations",
+        navMethod: "Outils Interactifs",
+        navContact: "Inscription & Contact",
+        heroBadge: "✨ Inscriptions ouvertes · Test de niveau gratuit",
+        heroTitle: "Maîtrisez le Français, l'Anglais et l'Arabe avec une méthode moderne",
+        heroDesc: "Bienvenue à L'Archipel des Langues à Nouadhibou. Des outils pédagogiques dynamiques et interactifs pour enfants, étudiants et professionnels, en présentiel et en ligne.",
+        heroCta1: "S'inscrire maintenant",
+        heroCta2: "WhatsApp Direct",
+        cardSub: "Direction : AHMED TALEB ZEIN",
+        stat1: "Langues",
+        stat2: "Tous niveaux",
+        stat3: "Interactif",
+        sec1Tag: "Nos Programmes Trilingues",
+        sec1Title: "Trois langues pour ouvrir toutes les portes",
+        sec1Desc: "Des parcours adaptés à chaque âge et chaque objectif : scolaire, universitaire ou professionnel.",
+        frTitle: "Cours de Français",
+        frDesc: "Outils pédagogiques dynamiques et interactifs : dialogues structurés, vocabulaire thématique, grammaire claire et prononciation.",
+        frF1: "Communication orale & aisance",
+        frF2: "Soutien scolaire & préparation examens",
+        frF3: "Français professionnel & rédaction",
+        enTitle: "Cours d'Anglais",
+        enDesc: "Outils dynamiques et interactifs : dialogues structurés, vocabulaire thématique, grammaire claire et compréhension orale.",
+        enF1: "Pratique orale & compréhension",
+        enF2: "Anglais général & professionnel",
+        enF3: "Quiz interactifs & prononciation",
+        arTitle: "Cours d'Arabe",
+        arDesc: "Outils pédagogiques innovants : dialogues clairs, vocabulaire thématique, grammaire simplifiée et prononciation authentique.",
+        arF1: "Lecture, écriture et grammaire claire",
+        arF2: "Expression orale et compréhension",
+        arF3: "Cours pour débutants et perfectionnement",
+        sec2Tag: "Pédagogie Numérique",
+        sec2Title: "Nos outils pédagogiques interactifs",
+        sec2Desc: "Une approche moderne alliant supports numériques sur ordinateur et pratique orale en petits groupes.",
+        t1Title: "Dialogues structurés",
+        t1Desc: "Mises en situation réelles pour parler avec confiance dès les premières séances.",
+        t2Title: "Vocabulaire thématique",
+        t2Desc: "Fiches visuelles et mémorisation active adaptée à la vie quotidienne et au travail.",
+        t3Title: "Grammaire claire",
+        t3Desc: "Explications simples, progressives et sans jargon complexe.",
+        t4Title: "Quiz interactifs",
+        t4Desc: "Exercices numériques ludiques pour évaluer vos progrès en temps réel.",
+        t5Title: "Compréhension orale",
+        t5Desc: "Supports audio authentiques pour habituer l'oreille aux accents naturels.",
+        t6Title: "Prononciation",
+        t6Desc: "Ateliers phonétiques ciblés pour une expression fluide et naturelle.",
+        sec3Tag: "Rejoignez-nous",
+        sec3Title: "Inscription & Coordonnées",
+        sec3Desc: "Réservez votre test de niveau gratuit ou contactez-nous directement sur WhatsApp.",
+        infoHeading: "L'Archipel des Langues",
+        infoSub: "Centre de formation linguistique · Présentiel & En ligne",
+        directorRole: "Fondateur & Directeur · AHMED TALEB ZEIN",
+        lblPhone: "Téléphone & WhatsApp",
+        lblEmail: "E-mail",
+        lblAddress: "Adresse",
+        valAddress: "Nouadhibou, Mauritanie · نواذيبو، موريتانيا",
+        lblHours: "Horaires des cours",
+        valHours: "Lun – Ven : 08h30 – 13h00 & 16h00 – 21h00 | Samedi : 09h00 – 14h00",
+        formTitle: "Demande d'inscription / Test gratuit",
+        formDesc: "Remplissez ce formulaire rapide : votre demande sera envoyée directement sur notre WhatsApp.",
+        fName: "Nom complet",
+        fPhone: "Votre numéro WhatsApp",
+        fLang: "Langue souhaitée",
+        fLevel: "Niveau estimé",
+        fMode: "Format de cours",
+        fSubmit: "Envoyer via WhatsApp (+222 47 67 27 97)"
+      },
+      en: {
+        dir: "ltr",
+        schoolName: "The Archipelago of Languages",
+        schoolSub: "Nouadhibou · Mauritania",
+        navCourses: "Courses",
+        navMethod: "Interactive Tools",
+        navContact: "Enroll & Contact",
+        heroBadge: "✨ Now Enrolling · Free Placement Test",
+        heroTitle: "Master French, English, and Arabic with a Modern Interactive Method",
+        heroDesc: "Welcome to The Archipelago of Languages in Nouadhibou. Dynamic and interactive learning tools for kids, students, and professionals, on-site and online.",
+        heroCta1: "Enroll Now",
+        heroCta2: "Direct WhatsApp",
+        cardSub: "Director: AHMED TALEB ZEIN",
+        stat1: "Languages",
+        stat2: "All Levels",
+        stat3: "Interactive",
+        sec1Tag: "Trilingual Programs",
+        sec1Title: "Three Languages to Open Every Door",
+        sec1Desc: "Tailored learning paths for every age and goal: academic, university, or professional.",
+        frTitle: "French Courses",
+        frDesc: "Dynamic and interactive learning tools: structured dialogues, thematic vocabulary, clear grammar, and pronunciation.",
+        frF1: "Oral communication & fluency",
+        frF2: "Academic support & exam prep",
+        frF3: "Business French & writing skills",
+        enTitle: "English Courses",
+        enDesc: "Dynamic and interactive learning tools: structured dialogues, thematic vocabulary, clear grammar, and listening comprehension.",
+        enF1: "Speaking & listening practice",
+        enF2: "General & Business English",
+        enF3: "Interactive quizzes & pronunciation",
+        arTitle: "Arabic Courses",
+        arDesc: "Innovative interactive learning tools: clear dialogues, thematic vocabulary, simplified grammar, and authentic pronunciation.",
+        arF1: "Reading, writing & clear grammar",
+        arF2: "Oral expression & comprehension",
+        arF3: "Beginner to advanced levels",
+        sec2Tag: "Digital Pedagogy",
+        sec2Title: "Our Interactive Learning Tools",
+        sec2Desc: "A modern approach combining computer-based digital tools with small-group speaking practice.",
+        t1Title: "Structured Dialogues",
+        t1Desc: "Real-life scenarios to help you speak with confidence from day one.",
+        t2Title: "Thematic Vocabulary",
+        t2Desc: "Visual flashcards and active recall tailored to daily life and work.",
+        t3Title: "Clear Grammar",
+        t3Desc: "Simple, step-by-step explanations without confusing jargon.",
+        t4Title: "Interactive Quizzes",
+        t4Desc: "Engaging digital exercises to track your progress in real time.",
+        t5Title: "Listening Comprehension",
+        t5Desc: "Authentic audio materials to train your ear to natural accents.",
+        t6Title: "Pronunciation",
+        t6Desc: "Targeted phonetic workshops for smooth, natural speech.",
+        sec3Tag: "Join Us",
+        sec3Title: "Enrollment & Contact Details",
+        sec3Desc: "Book your free placement test or message us directly on WhatsApp.",
+        infoHeading: "The Archipelago of Languages",
+        infoSub: "Language Training Center · On-site & Online",
+        directorRole: "Founder & Director · AHMED TALEB ZEIN",
+        lblPhone: "Phone & WhatsApp",
+        lblEmail: "Email",
+        lblAddress: "Address",
+        valAddress: "Nouadhibou, Mauritania · نواذيبو، موريتانيا",
+        lblHours: "Class Schedule",
+        valHours: "Mon – Fri: 08:30 – 13:00 & 16:00 – 21:00 | Saturday: 09:00 – 14:00",
+        formTitle: "Enrollment / Free Placement Test",
+        formDesc: "Fill out this quick form to send your request directly to our WhatsApp.",
+        fName: "Full Name",
+        fPhone: "Your WhatsApp Number",
+        fLang: "Preferred Language",
+        fLevel: "Current Level",
+        fMode: "Class Format",
+        fSubmit: "Send via WhatsApp (+222 47 67 27 97)"
+      },
+      ar: {
+        dir: "rtl",
+        schoolName: "أرخبيل اللغات",
+        schoolSub: "نواذيبو · موريتانيا",
+        navCourses: "البرامج اللغوية",
+        navMethod: "الأدوات التفاعلية",
+        navContact: "التسجيل والتواصل",
+        heroBadge: "✨ التسجيل مفتوح الآن · اختبار تحديد المستوى مجاناً",
+        heroTitle: "أتقن الفرنسية والإنجليزية والعربية بأسلوب تعليمي حديث وتفاعلي",
+        heroDesc: "مرحباً بكم في مدرسة أرخبيل اللغات في نواذيبو. أدوات تعليمية تفاعلية ومبتكرة للأطفال والطلاب والمهنيين، حضورياً وعن بُعد.",
+        heroCta1: "سجّل الآن",
+        heroCta2: "واتساب مباشر",
+        cardSub: "الإدارة: أحمد طالب الزين (AHMED TALEB ZEIN)",
+        stat1: "لغات",
+        stat2: "جميع المستويات",
+        stat3: "تفاعلي",
+        sec1Tag: "برامجنا ثلاثية اللغات",
+        sec1Title: "ثلاث لغات تفتح لك آفاق المستقبل",
+        sec1Desc: "مسارات تعليمية مصممة لكل الأعمار والأهداف: الدراسية والجامعية والمهنية.",
+        frTitle: "دروس اللغة الفرنسية",
+        frDesc: "أدوات تعليمية تفاعلية: حوارات منظمة، مفردات موضوعية، قواعد واضحة، وتدريب عملي على النطق السليم.",
+        frF1: "التواصل الشفهي والطلاقة في الحديث",
+        frF2: "الدعم المدرسي والتحضير للامتحانات",
+        frF3: "الفرنسية المهنية والتحرير الإداري",
+        enTitle: "دروس اللغة الإنجليزية",
+        enDesc: "أدوات تعليمية حديثة: حوارات تفاعلية، مفردات شاملة، قواعد مبسطة، وتطوير مهارات الاستماع والمحادثة.",
+        enF1: "ممارسة المحادثة والاستماع",
+        enF2: "الإنجليزية العامة وإنجليزية الأعمال",
+        enF3: "اختبارات تفاعلية وتحسين النطق",
+        arTitle: "دروس اللغة العربية",
+        arDesc: "أدوات تعليمية تفاعلية ومبتكرة: حوارات واضحة، مفردات موضوعية، قواعد مبسطة، وتطوير الفهم الشفهي والنطق السليم.",
+        arF1: "القراءة والكتابة والقواعد المبسطة",
+        arF2: "التعبير الشفهي والفهم والاستيعاب",
+        arF3: "برامج للمبتدئين والمستويات المتقدمة",
+        sec2Tag: "التعليم الرقمي",
+        sec2Title: "أدواتنا التعليمية التفاعلية",
+        sec2Desc: "منهجية حديثة تجمع بين الوسائط الرقمية على الحاسوب والممارسة الشفهية في مجموعات صغيرة.",
+        t1Title: "حوارات واضحة ومنظمة",
+        t1Desc: "مواقف تواصلية واقعية تساعدك على التحدث بثقة منذ الحصص الأولى.",
+        t2Title: "مفردات موضوعية",
+        t2Desc: "بطاقات بصرية وحفظ نشط يناسب الحياة اليومية وسوق العمل.",
+        t3Title: "قواعد مبسطة",
+        t3Desc: "شروحات سهلة ومتدرجة بعيداً عن التعقيد.",
+        t4Title: "اختبارات تفاعلية",
+        t4Desc: "تمارين رقمية ممتعة لقياس تقدمك بشكل فوري.",
+        t5Title: "تطوير الفهم الشفهي",
+        t5Desc: "مقاطع صوتية متنوعة لتعويد الأذن على النطق الطبيعي.",
+        t6Title: "تحسين النطق",
+        t6Desc: "ورشات صوتية مركزة لاكتساب نطق سليم وواضح.",
+        sec3Tag: "انضم إلينا",
+        sec3Title: "التسجيل ومعلومات التواصل",
+        sec3Desc: "احجز اختبار تحديد المستوى المجاني أو تواصل معنا مباشرة عبر الواتساب.",
+        infoHeading: "مدرسة أرخبيل اللغات",
+        infoSub: "مركز لتعليم اللغات · حضوري وعن بُعد",
+        directorRole: "المؤسس والمدير · أحمد طالب الزين",
+        lblPhone: "الهاتف والواتساب",
+        lblEmail: "البريد الإلكتروني",
+        lblAddress: "العنوان",
+        valAddress: "نواذيبو، موريتانيا · Nouadhibou, Mauritanie",
+        lblHours: "أوقات الدراسة",
+        valHours: "الإثنين – الجمعة: 08:30 – 13:00 و 16:00 – 21:00 | السبت: 09:00 – 14:00",
+        formTitle: "طلب تسجيل / اختبار مستوى مجاني",
+        formDesc: "املأ هذا النموذج السريع وسيتم إرسال طلبك مباشرة إلى واتساب المدرسة.",
+        fName: "الاسم الكامل",
+        fPhone: "رقم الواتساب الخاص بك",
+        fLang: "اللغة المطلوبة",
+        fLevel: "المستوى التقديري",
+        fMode: "نظام الدراسة",
+        fSubmit: "إرسال عبر الواتساب (2797 4767 222+)"
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = t.dir;
+
+      document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
+      document.getElementById("btn-" + lang).classList.add("active");
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (t[key]) {
+          el.textContent = t[key];
+        }
+      });
+    }
+
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const lang = document.getElementById("languageChoice").value;
+      const level = document.getElementById("level").value;
+      const mode = document.getElementById("mode").value;
+
+      const message =
+        "Bonjour L'Archipel des Langues (www.archipeldeslangues.mr),%0A" +
+        "Je souhaite m'inscrire / passer un test de niveau :%0A" +
+        "• Nom : " + encodeURIComponent(name) + "%0A" +
+        "• Téléphone : " + encodeURIComponent(phone) + "%0A" +
+        "• Langue : " + encodeURIComponent(lang) + "%0A" +
+        "• Niveau : " + encodeURIComponent(level) + "%0A" +
+        "• Format : " + encodeURIComponent(mode);
+
+      window.open("https://wa.me/22247672797?text=" + message, "_blank", "noopener");
+    }
+  </script>
+</body>
+</html>
